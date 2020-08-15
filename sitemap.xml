@@ -23,22 +23,11 @@
   </url>
   
   <url>
-    <loc>/tags/algorithms/</loc>
-    <lastmod>2020-05-01T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/2020-05-01-algorithms-graphs/</loc>
-    <lastmod>2020-05-01T09:00:00+00:00</lastmod>
+    <loc>/categories/</loc>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-05-01T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
   </url>
   
 </urlset>
