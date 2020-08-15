@@ -30,5 +30,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Algorithms - Graphs</title>
+      <link>/posts/2020-05-01-algorithms-graphs/</link>
+      <pubDate>Fri, 01 May 2020 09:00:00 +0000</pubDate>
+      
+      <guid>/posts/2020-05-01-algorithms-graphs/</guid>
+      <description>Undirected Graphs Some problems  Path Shortest path Cycle Ehler tour: A cycle that uses each edge excatly once. Hamilton tour: A cycle that uses each vertex exactly once  classical NP-complete problem.   Connectivity MST: Biconnectivity: A vertex whose removal disconnects the graph Planarity Graph isomorphism: Are two graphs identical?  No one knows so far. A lonstanding open problem    Representations Real-world graphs tend to be sparse (huge number of vertices, small average vertex degree).</description>
+    </item>
+    
   </channel>
 </rss>
