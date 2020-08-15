@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ArunTimeException</title>
+    <link>arunsivasankaran.github.io.git/posts/</link>
+    <description>Recent content in Posts on ArunTimeException</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>You</copyright>
+    <lastBuildDate>Sat, 15 Aug 2020 00:31:37 -0700</lastBuildDate>
+    
+	<atom:link href="arunsivasankaran.github.io.git/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Post</title>
+      <link>arunsivasankaran.github.io.git/posts/2020-08-15-my-first-post/</link>
+      <pubDate>Sat, 15 Aug 2020 00:31:37 -0700</pubDate>
+      
+      <guid>arunsivasankaran.github.io.git/posts/2020-08-15-my-first-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithms - Graphs</title>
+      <link>arunsivasankaran.github.io.git/posts/2020-05-01-algorithms-graphs/</link>
+      <pubDate>Fri, 01 May 2020 09:00:00 +0000</pubDate>
+      
+      <guid>arunsivasankaran.github.io.git/posts/2020-05-01-algorithms-graphs/</guid>
+      <description>Undirected Graphs Some problems  Path Shortest path Cycle Ehler tour: A cycle that uses each edge excatly once. Hamilton tour: A cycle that uses each vertex exactly once  classical NP-complete problem.   Connectivity MST: Biconnectivity: A vertex whose removal disconnects the graph Planarity Graph isomorphism: Are two graphs identical?  No one knows so far. A lonstanding open problem    Representations Real-world graphs tend to be sparse (huge number of vertices, small average vertex degree).</description>
+    </item>
+    
+  </channel>
+</rss>

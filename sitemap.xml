@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>arunsivasankaran.github.io.git/about/</loc>
+    <lastmod>2020-08-15T00:31:37-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>arunsivasankaran.github.io.git/</loc>
+    <lastmod>2020-08-15T00:31:37-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>arunsivasankaran.github.io.git/posts/2020-08-15-my-first-post/</loc>
+    <lastmod>2020-08-15T00:31:37-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>arunsivasankaran.github.io.git/posts/</loc>
+    <lastmod>2020-08-15T00:31:37-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>arunsivasankaran.github.io.git/tags/algorithms/</loc>
+    <lastmod>2020-05-01T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>arunsivasankaran.github.io.git/posts/2020-05-01-algorithms-graphs/</loc>
+    <lastmod>2020-05-01T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>arunsivasankaran.github.io.git/tags/</loc>
+    <lastmod>2020-05-01T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>arunsivasankaran.github.io.git/categories/</loc>
+  </url>
+  
+</urlset>
