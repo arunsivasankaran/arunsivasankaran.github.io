@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/2020-08-15-my-first-post/</loc>
+    <loc>/posts/2020-08-15-encoding/</loc>
     <lastmod>2020-08-15T00:31:37-07:00</lastmod>
   </url>
   
@@ -18,16 +18,47 @@
   </url>
   
   <url>
+    <loc>/tags/ascii/</loc>
+    <lastmod>2020-08-15T00:31:37-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/binary/</loc>
+    <lastmod>2020-08-15T00:31:37-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/</loc>
     <lastmod>2020-08-15T00:31:37-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/tags/</loc>
+    <lastmod>2020-08-15T00:31:37-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/tags/unicode/</loc>
+    <lastmod>2020-08-15T00:31:37-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/utf-8/</loc>
+    <lastmod>2020-08-15T00:31:37-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/algorithms/</loc>
+    <lastmod>2020-05-01T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2020-05-01-algorithms-graphs/</loc>
+    <lastmod>2020-05-01T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
   </url>
   
 </urlset>

@@ -7,9 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>You</copyright>
+    <lastBuildDate>Sat, 15 Aug 2020 00:31:37 -0700</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ascii</title>
+      <link>/tags/ascii/</link>
+      <pubDate>Sat, 15 Aug 2020 00:31:37 -0700</pubDate>
+      
+      <guid>/tags/ascii/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>binary</title>
+      <link>/tags/binary/</link>
+      <pubDate>Sat, 15 Aug 2020 00:31:37 -0700</pubDate>
+      
+      <guid>/tags/binary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unicode</title>
+      <link>/tags/unicode/</link>
+      <pubDate>Sat, 15 Aug 2020 00:31:37 -0700</pubDate>
+      
+      <guid>/tags/unicode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>utf-8</title>
+      <link>/tags/utf-8/</link>
+      <pubDate>Sat, 15 Aug 2020 00:31:37 -0700</pubDate>
+      
+      <guid>/tags/utf-8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithms</title>
+      <link>/tags/algorithms/</link>
+      <pubDate>Fri, 01 May 2020 09:00:00 +0000</pubDate>
+      
+      <guid>/tags/algorithms/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> (WIP) Character encodings </title>
+  <meta name="description" content="I am learning stuff.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="(WIP) Character encodings" />
+<meta property="og:description" content="ASCII I started attending an online class called the Bradfield Computer Science Intensive. I can tell you that I am learning a lot of new and exciting stuff. Stuff I should have learned in college, but didn&rsquo;t. I might write a post about that someday. But for now Ill try and get straight to the point.
+Computers only speak one language. Its binary. The only 2 alphabets are [0, 1]. You can also think of them as [On, Off], [Up, Down]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/2020-08-15-encoding/" />
+<meta property="article:published_time" content="2020-08-15T00:31:37-07:00" />
+<meta property="article:modified_time" content="2020-08-15T00:31:37-07:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="(WIP) Character encodings"/>
+<meta name="twitter:description" content="ASCII I started attending an online class called the Bradfield Computer Science Intensive. I can tell you that I am learning a lot of new and exciting stuff. Stuff I should have learned in college, but didn&rsquo;t. I might write a post about that someday. But for now Ill try and get straight to the point.
+Computers only speak one language. Its binary. The only 2 alphabets are [0, 1]. You can also think of them as [On, Off], [Up, Down]."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="/css/style-dark.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="/images/favicon.ico" />
+
+  
+  
+  
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /about/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2020-08-15-encoding%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2020-08-15-encoding%2f&text=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2020-08-15-encoding%2f&is_video=false&description=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%28WIP%29%20Character%20encodings&body=Check out this article: %2fposts%2f2020-08-15-encoding%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020-08-15-encoding%2f&name=%28WIP%29%20Character%20encodings&description=ASCII%20I%20started%20attending%20an%20online%20class%20called%20the%20Bradfield%20Computer%20Science%20Intensive.%20I%20can%20tell%20you%20that%20I%20am%20learning%20a%20lot%20of%20new%20and%20exciting%20stuff.%20Stuff%20I%20should%20have%20learned%20in%20college%2c%20but%20didn%26rsquo%3bt.%20I%20might%20write%20a%20post%20about%20that%20someday.%20But%20for%20now%20Ill%20try%20and%20get%20straight%20to%20the%20point.%0aComputers%20only%20speak%20one%20language.%20Its%20binary.%20The%20only%202%20alphabets%20are%20%5b0%2c%201%5d.%20You%20can%20also%20think%20of%20them%20as%20%5bOn%2c%20Off%5d%2c%20%5bUp%2c%20Down%5d.">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2020-08-15-encoding%2f&t=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ascii">ASCII</a></li>
+    <li><a href="#utf-16-32">UTF-16, 32&hellip;.</a></li>
+    <li><a href="#utf-8">UTF-8</a></li>
+    <li><a href="#unicode">UNICODE</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        (WIP) Character encodings
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-08-15 00:31:37 -0700 PDT" itemprop="datePublished">2020-08-15</time>
+          
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/binary" rel="tag">binary</a>
+            
+            
+            <a class="tag-link" href="/tags/ascii" rel="tag">ascii</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/unicode" rel="tag">unicode</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/utf-8" rel="tag">utf-8</a>
+            
+        </div> 
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="ascii">ASCII</h2>
+<p>I started attending an online class called the Bradfield Computer Science Intensive. I can tell you that I am learning a lot of new and exciting stuff. Stuff I should have learned in college, but didn&rsquo;t. I might write a post about that someday. But for now Ill try and get straight to the point.</p>
+<p>Computers only speak one language. Its binary. The only 2 alphabets are [0, 1]. You can also think of them as <code>[On, Off]</code>, <code>[Up, Down]</code>..<code>[Good, Evil]</code>. I wanted to write a short funny blurb about how binary was invented by a soldier who lost all but 2 of his fingers fighting for king arthur. But I realized I am a horrible story teller. So&hellip;</p>
+<p>Anyway. People, unlike computers, normally use languages with many alphabets. Like english with 26, or <a href="https://en.wikipedia.org/wiki/Tamil_script">Tamil</a> with 247 or Klingon - also with 26.</p>
+<p>So, we needed computers to be able to represent these alphabets - otherwise whats the point of computers? So people came up with a variety of techniques to store and represent english alphabets in binary. So, we all know we can use binary to represent numbers. Its pretty straight forward. So all we have to do is assign a number to each of the alphabets, and then voila. If we decide a is 0, b is 1 and c is 2, then abc is just (1, 2, 3) in binary - which translates to <code>[00000000, 00000001, 00000010]</code>. This way, we can encode all english characters, numbers and pretty much anything else, made up or real as numbers and so, as binary.</p>
+<p><a href="https://www.w3schools.com/charsets/ref_html_ascii.asp">ASCII</a> or &ldquo;American Standard Code for Information Interchange&rdquo; is a such a character encodings map.</p>
+<p>With out a standard, like ASCII, people can make up their own character encodings. And these encodings wont be compatible. So we would lose interoperability. ASCII solves that problem. As long as one encodes text in ASCII, we can be sure that the text will be interpreted properly by anyone else using the ASCII standard. There - thats one problems solved.</p>
+<p>The ASCII standard, encodes a character as a 7 bit integer. With 7 bits, we can represent 128 characters. No more. Now that is more than enough for to represent all of english, lower case and upper case, all numbers 0 - 7 and a still have some space left over. But not a lot.</p>
+<p>Even though ASCII characters use only 7 bits, we use all 8 bits in a byte to represent them. This means the 8th bit is wasted. Normally its just zeroed out, but sometimes, the 8th bit is used as a parity bit used for error detection. We will talk about this in a different post.</p>
+<p>The ASCII standard works well for Americans. It might also work pretty well for most latin derived languages. But what about tamil?
+If you recall, there are 247 alphabets in the Tamil language. 7 bits is NOT enough. And what about other languages?</p>
+<h2 id="utf-16-32">UTF-16, 32&hellip;.</h2>
+<h2 id="utf-8">UTF-8</h2>
+<h2 id="unicode">UNICODE</h2>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Writings</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ascii">ASCII</a></li>
+    <li><a href="#utf-16-32">UTF-16, 32&hellip;.</a></li>
+    <li><a href="#utf-8">UTF-8</a></li>
+    <li><a href="#unicode">UNICODE</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2f2020-08-15-encoding%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2f2020-08-15-encoding%2f&text=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2f2020-08-15-encoding%2f&is_video=false&description=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%28WIP%29%20Character%20encodings&body=Check out this article: %2fposts%2f2020-08-15-encoding%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=%2fposts%2f2020-08-15-encoding%2f&title=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2f2020-08-15-encoding%2f&name=%28WIP%29%20Character%20encodings&description=ASCII%20I%20started%20attending%20an%20online%20class%20called%20the%20Bradfield%20Computer%20Science%20Intensive.%20I%20can%20tell%20you%20that%20I%20am%20learning%20a%20lot%20of%20new%20and%20exciting%20stuff.%20Stuff%20I%20should%20have%20learned%20in%20college%2c%20but%20didn%26rsquo%3bt.%20I%20might%20write%20a%20post%20about%20that%20someday.%20But%20for%20now%20Ill%20try%20and%20get%20straight%20to%20the%20point.%0aComputers%20only%20speak%20one%20language.%20Its%20binary.%20The%20only%202%20alphabets%20are%20%5b0%2c%201%5d.%20You%20can%20also%20think%20of%20them%20as%20%5bOn%2c%20Off%5d%2c%20%5bUp%2c%20Down%5d.">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2f2020-08-15-encoding%2f&t=%28WIP%29%20Character%20encodings">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2020  You 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Writings</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+</html>
