@@ -6,7 +6,6 @@
     <description>Recent content in Tags on ArunTimeException</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>You</copyright>
     <lastBuildDate>Sat, 15 Aug 2020 00:31:37 -0700</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -45,15 +44,6 @@
       <pubDate>Sat, 15 Aug 2020 00:31:37 -0700</pubDate>
       
       <guid>/tags/utf-8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Algorithms</title>
-      <link>/tags/algorithms/</link>
-      <pubDate>Fri, 01 May 2020 09:00:00 +0000</pubDate>
-      
-      <guid>/tags/algorithms/</guid>
       <description></description>
     </item>
     
