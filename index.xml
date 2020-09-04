@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>(WIP) Character encodings</title>
-      <link>/posts/2020-08-15-encoding/</link>
+      <title>(WIP) Bits, Bytes and Character encodings</title>
+      <link>/posts/encoding/</link>
       <pubDate>Sat, 15 Aug 2020 00:31:37 -0700</pubDate>
       
-      <guid>/posts/2020-08-15-encoding/</guid>
-      <description>ASCII I started attending an online class called the Bradfield Computer Science Intensive. I can tell you that I am learning a lot of new and exciting stuff. Stuff I should have learned in college, but didn&amp;rsquo;t. I might write a post about that someday. But for now Ill try and get straight to the point.
-Computers only speak one language. Its binary. The only 2 alphabets are [0, 1]. You can also think of them as [On, Off], [Up, Down].</description>
+      <guid>/posts/encoding/</guid>
+      <description>ASCII Computers can only represent binary values in storage. To represent characters in storage - we map these characters to numbers (decimal) and then we use binary to represent these numbers in computer storage. With enough numbers, we can represent pretty much anything we want - real or made up, in binary. These mappings of characters to numbers are called character encodings, and ASCII is one such encoding.
+In ASCII, an A in decimal, is 65 and in binary is 01000001.</description>
     </item>
     
     <item>
