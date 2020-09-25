@@ -210,13 +210,11 @@ In ASCII, an A in decimal, is 65 and in binary is 01000001."/>
   
     <div class="content" itemprop="articleBody">
       <h2 id="ascii">ASCII</h2>
-<p>Computers can only represent binary values in storage. To represent characters in storage - we map these characters to
-numbers (decimal) and then we use binary to represent these numbers in computer storage. With enough numbers, we can represent
-pretty much anything we want - real or made up, in binary. These mappings of characters to numbers
+<p>Computers can only represent binary values in storage. To represent characters in storage - we map these characters to numbers (decimal) and then we use binary to represent these numbers in computer storage. With enough numbers, we can represent pretty much anything we want - real or made up, in binary. These mappings of characters to numbers
 are called character encodings, and <a href="https://www.w3schools.com/charsets/ref_html_ascii.asp">ASCII</a> is one such encoding.</p>
 <p>In ASCII, an <code>A</code> in decimal, is 65 and in binary is <code>01000001</code>.
 and <code>Z</code> is 90 in decimal and <code>01011010</code> in binary.</p>
-<p>This is what the english alphabet looks like in ASCII.</p>
+<p>This is what the English alphabet looks like in ASCII.</p>
 <pre><code>A - 01000001 - 65
 B - 01000010 - 66
 C - 01000011 - 67
@@ -226,28 +224,24 @@ D - 01000100 - 68
 ..
 ..
 Z - 01011010 - 90
-</code></pre><p>If you think you see a pattern in the above mapping, you are not wrong. The values for the alphabet were not chosen
-at random. We will talk more about it later on in this post.</p>
+</code></pre><p>If you think you see a pattern in the above mapping, you are not wrong. The values for the alphabet were not chosen at random. We will talk more about it later on in this post.</p>
 <p>For character encodings to be useful, they need to be well defined and extensible.</p>
-<p>Well defined - so any one can implement it and be assured that they will have interoperability.
-With out a standard, like ASCII, people can make up their own character encodings. As long as one encodes text in ASCII, we can be sure that the text will be interpreted properly by anyone else using the ASCII standard. There - thats one problems solved.</p>
+<p>Well defined - so anyone can implement it and be assured that they will have interoperability.
+Without a standard, like ASCII, people can make up their own character encodings. As long as one encodes text in ASCII, we can be sure that the text will be interpreted properly by anyone else using the ASCII standard. There - that&rsquo;s one problem solved.</p>
 <p>Extensible - so you can&hellip;extend it in case we need to. ASCII, while well defined&hellip;is NOT very extensible.</p>
-<p>Why? Because the ASCII standard was conceived with only the english alphabet (and probably latin derived languages) in mind.
+<p>Why? Because the ASCII standard was conceived with only the English alphabet (and probably Latin derived languages) in mind.
 You get 8 bits (or a byte) to store a character. This limits the ASCII standard to 256 characters at most. Technically ASCII only uses 7 bits.
 Sometimes the 8th bit is used as a parity bit. This means the original ASCII standard only supported 128 characters (0 - 127).
-There is an extension to the ASCII encoding called the Extended ASCII which uses all 8 bits, which doubled the number characters
-that can be represented. The extended set is used to represent some foreign language characters and some special symbols.</p>
-<p>Like I said before, 256 (or 128) seems fine, if all you care about is the english alphabet. What if now, you want to work
-with klingon text, which has 26 alphabets of its own? or <a href="https://en.wikipedia.org/wiki/Tamil_script">Tamil</a> - which has another 247?
+There is an extension to the ASCII encoding called the Extended ASCII which uses all 8 bits, which doubled the number of characters that can be represented. The extended set is used to represent some foreign language characters and some special symbols.</p>
+<p>Like I said before, 256 (or 128) seems fine, if all you care about is the English alphabet. What if now, you want to work
+with Klingon text, which has 26 alphabets of its own? or <a href="https://en.wikipedia.org/wiki/Tamil_script">Tamil</a> - which has another 247?
 The short answer -  WE NEED more numbers. With enough numbers, we can represent pretty much anything, made up or real
 in binary.</p>
 <p>And thankfully we have a lot of numbers to work with.
-But it will take more than 8 bits to represent these numbers. If fact we have many commonly used character encodings
-that support more characters than ASCII does. eg UTF-16 (16 bits per character) UTF-32 (32 bits per character) and
-UTF-8 (variable width representation). UTF-8 is now the most commonly used character encoding on the web. We will look at why later on in
-this post.</p>
+But it will take more than 8 bits to represent these numbers. If fact we have many commonly used character encodings that support more characters than ASCII does. eg UTF-16 (16 bits per character) UTF-32 (32 bits per character) and
+UTF-8 (variable width representation). UTF-8 is now the most commonly used character encoding on the web. We will look at why later on in this post.</p>
 <h3 id="the-magic-of-ascii">The Magic of ASCII</h3>
-<p>Lets look at the table from above again.</p>
+<p>Let us look at the table from above again.</p>
 <pre><code>A - 01000001 - 65
 B - 01000010 - 66
 C - 01000011 - 67
@@ -258,12 +252,11 @@ D - 01000100 - 68
 ..
 Z - 01011010 - 90
 </code></pre><p>From the above table, we can work out a few patterns.</p>
-<p>All the alphabets from A - Z start with 01 as the high order bits (the left most bits). So visually when looking at binary
-encoded values, we can workout what they represent. If you see a <code>01000001</code>, you can figure out that it is an <code>A</code>. You can
-ignore the first two higher order bits and just calculate the value of  <code>000001</code>, which is 1 for <code>A</code> and 26 for <code>Z</code>.
-The same is true for all lower case alphabets too. Just ignore the first 3 higher order bits and they
+<p>All the alphabets from A - Z start with 01 as the high order bits (the leftmost bits). So visually when looking at binary encoded values, we can work out what they represent. If you see a <code>01000001</code>, you can figure out that it is an <code>A</code>. You can
+ignore the first two higher-order bits and just calculate the value of  <code>000001</code>, which is 1 for <code>A</code> and 26 for <code>Z</code>.
+The same is true for all lower case alphabets too. Just ignore the first 3 higher-order bits and they
 work out to 1 for <code>a</code> and 26 for <code>z</code>.</p>
-<p>Lower case english alphabet</p>
+<p>Lower case English alphabet</p>
 <pre><code>a - 01100001 - 97
 b - 01100010 - 98
 c - 01100011 - 99
@@ -273,9 +266,9 @@ d - 01100100 - 100
 ..
 ..
 z - 01111010 - 122
-</code></pre><p>I suspect this was done on purpose. I am not certain though. But it cant just be a coincidence can it?</p>
+</code></pre><p>I suspect this was done on purpose. I am not certain though. But it can&rsquo;t just be a coincidence, can it?</p>
 <h3 id="control-characters">Control Characters</h3>
-<p>Ok - now we know where the english alphabets are in the ASCII standard. What about the other numbers? What do they do?</p>
+<p>Ok - now we know where the English alphabets are in the ASCII standard. What about the other numbers? What do they do?</p>
 <p>The first 32 characters (0 - 31) are called control characters. These used to be very important back when people still worked
 with [teletypewriters](<a href="https://en.wikipedia.org/wiki/Teleprinter#:~:text=A%20teleprinter%20(teletypewriter%2C%20teletype%20or,point%2Dto%2Dmultipoint%20configurations.)">https://en.wikipedia.org/wiki/Teleprinter#:~:text=A%20teleprinter%20(teletypewriter%2C%20teletype%20or,point%2Dto%2Dmultipoint%20configurations.)</a>.</p>
 <p>Some of them are still very relevant. You might be familiar with a few of these.</p>
@@ -283,36 +276,30 @@ with [teletypewriters](<a href="https://en.wikipedia.org/wiki/Teleprinter#:~:tex
 10 - `\n`   : New Line
 13 - `\r`   : Carriage Return
 26 - `EOF`  : End of file
-</code></pre><p>These are non printing characters. If you print out some ASCII text with the characters, you wont actually see them on paper.
-To be clear <code>\n</code> is represented as 10 in decimal. It is NOT actually stored as <code>\</code> + <code>n</code>. We use <code>\n</code> to represent it visually. Sometimes it
+</code></pre><p>These are non-printing characters. If you print out some ASCII text with the characters, you won&rsquo;t see them on paper.
+To be clear <code>\n</code> is represented as 10 in decimal. It is NOT stored as <code>\</code> + <code>n</code>. We use <code>\n</code> to represent it visually. Sometimes it
 helps to see these characters - especially when working with source code.</p>
-<p>Most of these control character are no longer used regularly.</p>
-<p>I am not very well versed in the early history of computers, but I understand that these teletypes where used as an user
-interface to mainframe computers. You typed to input data into the mainframe and would then print the response onto a stacks of paper.</p>
+<p>Most of these control characters are no longer used regularly.</p>
+<p>I am not very well versed in the early history of computers, but I understand that these teletypes were used as a user
+interface to mainframe computers. You typed to input data into the mainframe and would then print the response onto stacks of paper.</p>
 <p>Teletypes are very similar to regular typewriters in function. On a typewriter, you would type until you reached the right end of the paper.
-Then you would hit the carriage return to move the print head back to the front and the roll the paper to align a new line with the print head.<br>
+Then you would hit the carriage return to move the print head back to the front and the rollover the paper to align a new line with the print head.<br>
 The <code>\r</code> and <code>\n</code> are used to represent these actions. When a teletype encounters these characters when printing text to paper, it would
-move the print head back to the front and the roll the paper to get to a new line.</p>
+move the print head back to the front and the rollover the paper to get to a new line.</p>
 <p>On a Microsoft Windows machines, text files normally use both a carriage return and a new line character to represent a line ending.
-On Linux machines, the carriage return is no longer needed and is normally just dropped from text files. You might have seen this in action when working with source control tools. Editing files created windows machine on a linux machine sometime produces diffs for every line. This depends on how your editor and git is configured</p>
+On Linux machines, the carriage return is no longer needed and is normally just dropped from text files. You might have seen this in action when working with source control tools. Editing files created on a windows machine on a Linux machine sometimes produces diffs for every line. This depends on how your editor and git is configured</p>
 <h2 id="bits-bytes-and-hex">Bits, Bytes and HEX</h2>
 <h3 id="bytes">Bytes</h3>
-<p>A byte is 8 bits. But why? Why 8 bits? There is probably a very rich historical context as to why. I am not aware of the all the
-details. But here is what I know.</p>
-<p>We need at-least 6 bits (0 - 31) to represent the 26 english alphabets. But we need at-least 7 bits to be case sensitive. People
-working with computers were probably motivated to use powers of 2 to represent data chunks. And then there is the parity bit.</p>
-<p>A parity bit, is used to detect data corruption. The algorithm used to to calculate the value of the parity bit is pretty simple.
-For an 8 bit value, you take the lower order 7 bits and the calculate the number of <code>1</code>s in the value. If that number is odd, the parity bit
-is a 1. If its even, then the parity bit is 0. This allows us to detect if the data was corrupted during transmission OR during
-storage. Lets say a single bit was flipped from a 0 to 1 or the other way around, this would be apparent when looking at the parity bit. But
-this is limited to detecting corruption to data in a single bit. If more than one bit is flipped, then we will not be able to use the parity bit
-to detect errors.</p>
-<p>That explains why a byte is 8 bits. But this was not always the case. There was a time when a byte meant 5 bits&hellip;and then an other time when it was 6 bits. We seem to have settled on 8 for now though.</p>
+<p>A byte is 8 bits. But why? Why 8 bits? There is probably a very rich historical context as to why. I am not aware of all the details. But here is what I know.</p>
+<p>We need at least 6 bits (0 - 31) to represent the 26 English alphabets. But we need at least 7 bits to be case sensitive. People working with computers were probably motivated to use powers of 2 to represent data chunks. And then there is the parity bit.</p>
+<p>A parity bit is used to detect data corruption. The algorithm used to calculate the value of the parity bit is pretty simple.
+For an 8 bit value, you take the lower order 7 bits and then calculate the number of <code>1</code>s in the value. If that number is odd, the parity bit
+is a 1. If it is even, then the parity bit is 0. This allows us to detect if the data was corrupted during transmission OR during storage. Let&rsquo;s say a single bit was flipped from a 0 to 1 or the other way around, this would be apparent when looking at the parity bit. But this is limited to detecting corruption to data in a single bit. If more than one bit is flipped, then we will not be able to use the parity bit to detect errors.</p>
+<p>That explains why a byte is 8 bits. But this was not always the case. There was a time when a byte meant 5 bits&hellip;and then another time when it was 6 bits. We seem to have settled on 8 for now though.</p>
 <h3 id="hex">HEX</h3>
-<p>Some time we want to represent numbers visually. We could use binary for small numbers. For bigger numbers, binary could get out of hand. Even decimal would be a pain.</p>
-<p>(2 ^ 32 - 1) in binary is would be <code>11111111111111111111111111111111</code>. Visually, this is not really helpful. It would be very hard to
-distinguish between (2^31 - 1) and (2^32 - 1). Decimal would be slightly better in this case, but we can do better with HEX.</p>
-<p>In binary we have 2 symbols <code>(0,1)</code>.</p>
+<p>Sometimes we want to represent numbers visually. We could use binary for small numbers. For bigger numbers, binary could get out of hand. Even decimal would be a pain.</p>
+<p>(2 ^ 32 - 1) in binary is would be <code>11111111111111111111111111111111</code>. Visually, this is not helpful. It would be very hard to distinguish between (2^31 - 1) and (2^32 - 1). Decimal would be slightly better in this case, but we can do better with HEX.</p>
+<p>In binary, we have 2 symbols <code>(0,1)</code>.</p>
 <p>In decimal we have 10. <code>(0,1,2,3,4,5,6,7,8,9)</code></p>
 <p>In HEX we have 16. <code>(0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f)</code></p>
 <p>Here is a table for comparison</p>
@@ -332,13 +319,13 @@ distinguish between (2^31 - 1) and (2^32 - 1). Decimal would be slightly better 
 
 </code></pre><p>Hex allows us to represent pretty large numbers in a visually compact way.</p>
 <p>(2 ^ 32) in HEX is <code>xffffffff</code>. OR <code>x ff ff ff ff</code>.
-Each of the <code>f</code>s represent 4 bits independently. In the above case, we have 8 - 4 bit values.</p>
+Each of the <code>f</code>s represent 4 bits independently. In the above case, we have 8 sets of 4-bit values.</p>
 <p>The x is required by convention to indicate the use of hexadecimal encoding.</p>
 <p>Like the control characters representation from earlier, HEX should only be used to represent numbers visually - for people to read and
 should NOT be used to encode values in computer memory.</p>
-<p>A common use case for HEX, is to represent colours in CSS.
+<p>A common use case for HEX is to represent colours in CSS.
 We can represent an RGB colour value using three 8 bit values.</p>
-<p>So the entire range of RBG colour pallette can be represented in hex (x000000  - xffffff)</p>
+<p>So the entire range of RBG colour palette can be represented in hex (x000000  - xffffff)</p>
 <h2 id="unicode">UNICODE</h2>
 <h2 id="utf-16-and-utf-32">UTF-16 and UTF-32</h2>
 <h2 id="utf-8">UTF-8</h2>
